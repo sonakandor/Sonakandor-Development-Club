@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<title>Sonakandor Development Club</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f2f2f2; }
+header
+{ background-color: #007b5e; color: white; padding: 20px; text-align: center; }
+nav { background-color: #005f47; padding: 10px; display: flex; justify-content: space-around; }
+nav a { color: white; text-decoration: none; font-weight: bold; }
+section { padding: 20px; }
+.form-group { margin-bottom: 10px; }
+input[type="text"], input[type="password"], input[type="email"] {
+padding: 8px; width: 100%; border: 1px solid #ccc; border-radius: 5px;
+}
+input[type="submit"] {
+background-color: #007b5e; color: white; padding: 10px 20px;
+border: none; border-radius: 5px; cursor: pointer;
+}
+.hidden { display: none; }
+</style>
+</head>
+<header>
+<h1>Sonakandor Development Club, Rajbari</h1>
+</header>
+
+<nav>
+  <a href="#" onclick="showSection('home')">Home</a>
+  <a href="#" onclick="showSection('register')">Registration</a>
+  <a href="#" onclick="showSection('login')">Login</a>
+  <a href="#" onclick="showSection('admin')">Admin Panel</a>
+</nav>
+
+<section id="home">
+  <h2>Welcome!</h2>
+  <p><img src="FB_IMG_17556713757473860.jpg"width="50"height="35"alt="SDC Logo"title="logo"></p>
+  <p>Sonakandor Development Club is a social and community organization based in Rajbari. We are committed to youth development, cultural programs, and educational support.</p>
+</section>
+
+<section id="register" class="hidden">
+  <h2>Registration Form</h2>
+  <form>
+    <div class="form-group">
+      <label>Name:</label><input type="text" required>
+    </div>
+    <div class="form-group">
+      <label>Email:</label><input type="email" required>
+    </div>
+    <div class="form-group">
+      <label>Password:</label><input type="password" required>
+    </div>
+    <div class="form-group">
+    <label>Date of Birth:</label><input type="date" required>
+    </div>
+    <div class="form-group">
+    <label>Age:</label><input type="number" required>
+    </div>
+    <div class="form-group">
+    <label>Father's name:</label><input type="text" required>
+    </div>
+    <div class="form-group">
+    <label>Mother's name:</label><input type="text" required>
+    </div>
+    <div class="form-group">
+    <label>Mobile number:</label><input type="number" required>
+    </div>
+    <div class="form-group">
+    <label>Present Address:</label><input type="text" required>
+    </div>
+    <div class="form-group">
+    <label>Permanent Address:</label><input type="text" required>
+    </div>
+    <div class="form-group">
+    <label>School/College:</label><input type="text" required>
+    </div>
+    <div class="form-group">
+    <label>Educational Qalification:</label><input type="text" required>
+    </div>
+    <input type="submit" value="Register">
+  </form>
+</section>
+
+<section id="login" class="hidden">
+  <h2>Login</h2>
+  <form onsubmit="event.preventDefault(); showDashboard();">
+    <div class="form-group">
+      <label>Email:</label><input type="email" id="loginEmail" required>
+    </div>
+    <div class="form-group">
+    <label>Password:</label><input type="password" id="loginPass" required>
+    </div>
+    <input type="submit" value="Login">
+    </form>
+    </section>
+    <section id="admin" class="hidden">
+    <h2>Admin Panel</h2>
+    <p>Only authorized admins can access this panel.</p>
+    <h2>Admin Login</h2>
+    <form onsubmit="event.preventDefault(); showDashboard();">
+    <div class="form-group">
+    <label>Email:</label><input type="email" id="loginEmail" required>
+    </div>
+    <div class="form-group">
+    <label>Password:</label><input type="password" id="loginPass" required>
+    </div>
+    <input type="submit" value="Login">
+    </form>
+    </section>
+    
+   <section id="dashboard" class="hidden">
+   <h2>User Dashboard</h2>
+   <p>Welcome back! You are now logged in.<br>
+   <html>
+   <body>
+   <table border="1"cellspacing="0"height="300"width="200"aling="center">
+   <caption><b>Club Member's</b></caption>
+   <tr>
+   <th>SL</th>
+   <th>NAME</th>
+   </tr>
+   <tr><td>1</td><td>Humaira Akter Rinthi</td></tr>
+   <tr><td>2</td><td>Md.Tashin Mugdho</td></tr>
+   <tr><td>3</td><td>Shovon Sarker</td></tr>
+   <tr><td>4</td><td>Hafiza Afrin Mrittika</td></tr>
+   <tr><td>5</td><td>Mohona Khondokar Sejuti</td></tr>
+   <tr><td>6</td><td>Rian Islam Jitu</td></tr>
+   <tr><td>7</td><td>Sinthi Akter</td></tr>
+   <tr><td>8</td><td>Mim Khatun</td></tr>
+   </table>
+   </body>
+   </html>
+    </p>
+    </section>
+    
+    <script>
+    function showSection(id) {
+    const sections = ['home', 'register', 'login', 'admin', 'dashboard'];
+    sections.forEach(sec => {
+    document.getElementById(sec).classList.add('hidden');
+    });
+    document.getElementById(id).classList.remove('hidden');
+    }
+    
+    function showDashboard() {
+    showSection('dashboard');
+    }
+    </script>
+    
+    </body>
+    </html>
